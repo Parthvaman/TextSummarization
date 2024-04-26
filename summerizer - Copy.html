@@ -1,0 +1,65 @@
+<!doctype HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/Text_summarizer.css')}}">
+    <title>Text Summarizer</title>
+    <style>
+        .download{
+            margin-right:250px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="/home" class="link">Home</a></li>
+                <li><a href="/" class="link">Text Summarizer</a></li>
+                <li><a href="/about" class="link">About Us</a></li>
+            </ul>
+            <div class="login">
+                <a href="/login">Login</a>
+            </div>
+
+        </nav>
+
+    </div>
+
+
+    
+
+        <!--div id="range">
+            <p style="display:inline">Summary Length:</p>
+            <a>Short</a>
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            <a>Long</a>
+        </div>-->
+<form id="sf" name="datain" method="post" action="/" enctype="multipart/form-data">
+    <div class="textbox" style="display:flex;flex-direction:row; justify-content: center;">
+        <textarea name="inpdata" id="input" cols="65" rows="30"
+                placeholder="Write/Upload Your Text for Text Summerization" style="font-weight: bold;">{{data}}</textarea>
+        <textarea name="out" id="input" cols="65" rows="30" placeholder="Summary"
+                style="font-weight: bold;">{{it}}</textarea>
+    </div>
+
+    <div class="functions">
+            <div id="new" style="margin-left:100px">
+                <label for="upload"><img src="{{url_for('static',filename='css/file.png')}}" class="cloud"></label>
+                <input type="file" name="file" id="upload">
+                <button class="download" name="data">Click to Upload File</button>
+            </div>
+            <button class="download" name="data" style="margin-left: 85px;">Summary</button>
+            <a class="download" href="/download" >Download Your Summary</a>
+    </div>
+</form>
+
+
+</body>
+
+</html>
